@@ -3,9 +3,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.generics import ListCreateAPIView, DestroyAPIView, RetrieveUpdateAPIView
 from rest_framework.viewsets import ModelViewSet
+#from rest_framework.decorators import permission_classes
 from .models import Booking, Menu
 from .serializers import BookingSerializer, MenuSerializer
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics
 
 # Create your views here.
 def index(request):
