@@ -28,6 +28,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DJOSER={"USER_ID_FIELD":"username"}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',  # Add TokenAuthentication
+        'rest_framework.authentication.SessionAuthentication',  # Add SessionAuthentication
+    ),
+    # Other REST_FRAMEWORK settings...
+}
 
 # Application definition
 
@@ -41,6 +50,9 @@ INSTALLED_APPS = [
 	'reservation',
 	'restaurant',
 	'rest_framework',
+	'rest_framework.authtoken',
+	#'LittleLemonAPI'
+	'djoser',
 ]
 
 MIDDLEWARE = [
